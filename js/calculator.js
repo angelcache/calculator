@@ -43,51 +43,81 @@ function showOnScreen(val) {
   }
 
   // For Calculation Cases
-  if (!isNaN(parseInt(val))) {
+  console.log("EEE")
+  console.log(val)
+
+  console.log("NUM BEFORE: " + num)
+  if (!isNaN(parseInt(val)) || val === ".") {
+    if (num.includes(".") && val === "." || num.includes(".") && num === "") {
+      return;
+    }
     num += val;
     calcScreen += val;
   } else {
     console.log(calcScreen);
     console.log(val);
     if (isNaN(parseInt(calcScreen[calcScreen.length - 1])) && val != "=") {
+      if (calcScreen == "" || calcScreen[calcScreen.length - 1] === ".") { 
+        console.log("NUM WITHIN: " + num)
+        return; // prevents operator entry if no prev num or if "."
+      }
       console.log("WHATTT")
       calcScreen = calcScreen.slice(0, calcScreen.length - 1) + val;
     } else if (val != "=") {
       calcScreen += val;
     }
   }
+  console.log("NUM AFTER: " + num)
   console.log("HEY " + calcScreen);
   screen.innerText = calcScreen;
 }
 
 function checkCalculate() {
-  if (num) {
-      nums.push(num);
+  if (num && num[num.length-1] != ".") {
+    console.log("YO ITS HERE:" + num)
+    nums.push(num);
+    num = ""
   }
 
-  console.log("AFTER PUSH")
+  console.log("NOOOOOO: ")
   console.log(nums);
-  num = ""
+  
   if (nums.length == 2) {
-      num1 = parseInt(nums[0]);
-      num2 = parseInt(nums[1]);
-      calculate(num1, num2);
+    
+    console.log("INSIDE CALCULATE")
+    let num1 = nums[0];
+    let num2 = nums[1];
+    if (num1.includes(".") || num2.includes(".")) {
+      num1 = parseFloat(num1);
+      num2 = parseFloat(num2);
+    } else {
+      num1 = parseInt(num1);
+      num2 = parseInt(num2);
+    }
+    calculate(num1, num2);
   }
   console.log("CHECK CALCULATE");
   console.log(nums);
 }
 
 function calculate(first, second) {
+  const doneCalcScreen = document.querySelector(".js-calc-done-screen");
+
   if (oper == "+") {
     num = first + second;
+    calculation = `${first} + ${second}  = ${num}`;
   } else if (oper == "-") {
     num = first - second;
+    calculation = `${first} - ${second}  = ${num}`;
   } else if (oper == "*") {
     num = first * second;
+    calculation = `${first} * ${second}  = ${num}`;
   } else if (oper == "/") {
     num = first / second;
-    console.log(`DIVISION: ${first} + ${second}  = ${num}`);
+    calculation = `${first} / ${second}  = ${num}`;
   }
+
+  doneCalcScreen.innerText = calculation;
   nums = [String(num)];
   calcScreen = String(num);
   num = "";
@@ -106,7 +136,7 @@ function clearOrBackCalculation(command) {
   } else if (command === "Back") {
     lastVal = calcScreen[calcScreen.length - 1];
 
-    if (!parseInt(lastVal)) {
+    if (isNaN(parseInt(lastVal)) && lastVal != ".") {
       oper = "";
     } else {
       let numString = nums[nums.length - 1];
