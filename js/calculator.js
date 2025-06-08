@@ -7,6 +7,7 @@ let nums = [];
 let num = "";
 let calcScreen = "";
 let oper = "";
+const maxLimit = 15;
 
 function showOnScreen(val) {
   let screen = document.querySelector(".js-calc-screen");
@@ -38,6 +39,7 @@ function showOnScreen(val) {
 }
 
 function checkCalculate() {
+
   if (num && num[num.length-1] != ".") {
     nums.push(num);
     num = ""

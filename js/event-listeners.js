@@ -1,15 +1,17 @@
 // Event Listeners for Buttons
 numButtons.forEach(button => {
   button.addEventListener('click', () => {
-    showOnScreen(button.innerText);
+    if (num.length <= maxLimit) {
+      showOnScreen(button.innerText);
+    }
   });
 });
 
 operButtons.forEach(button => {
   button.addEventListener('click', () => {
-    checkCalculate();
-    showOnScreen(button.innerText);
-    oper = button.innerText;
+      checkCalculate();
+      showOnScreen(button.innerText);
+      oper = button.innerText;
   });
 });
 
@@ -27,7 +29,9 @@ commandButtons.forEach(button => {
 // Event Listeners for Keys
 document.addEventListener('keydown', (e) => {
   if (!isNaN(parseInt(e.key))) {
-    showOnScreen(e.key);
+    if (num.length <= maxLimit) {
+      showOnScreen(e.key);
+    }
   }
 
   if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/") {
@@ -36,7 +40,7 @@ document.addEventListener('keydown', (e) => {
     oper = e.key;
   }
 
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.key === "=") {
     checkCalculate();
     showOnScreen("");
   }
