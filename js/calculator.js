@@ -8,31 +8,6 @@ let num = "";
 let calcScreen = "";
 let oper = "";
 
-numButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    showOnScreen(button.innerText);
-  });
-});
-
-operButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    checkCalculate();
-    showOnScreen(button.innerText);
-    oper = button.innerText;
-  });
-});
-
-equalButton.addEventListener('click', () => {
-  checkCalculate();
-  showOnScreen("");
-});
-
-commandButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    clearOrBackCalculation(button.innerText);
-  })
-})
-
 function showOnScreen(val) {
   let screen = document.querySelector(".js-calc-screen");
 
