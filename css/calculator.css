@@ -1,7 +1,7 @@
 /* Outer Calculator Design */
 body {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   font-family: Arial;
   align-content: center;
   background-color: #BD9A81;
