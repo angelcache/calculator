@@ -43,10 +43,6 @@ function showOnScreen(val) {
   }
 
   // For Calculation Cases
-  console.log("EEE")
-  console.log(val)
-
-  console.log("NUM BEFORE: " + num)
   if (!isNaN(parseInt(val)) || val === ".") {
     if (num.includes(".") && val === "." || num.includes(".") && num === "") {
       return;
@@ -54,37 +50,26 @@ function showOnScreen(val) {
     num += val;
     calcScreen += val;
   } else {
-    console.log(calcScreen);
-    console.log(val);
     if (isNaN(parseInt(calcScreen[calcScreen.length - 1])) && val != "=") {
       if (calcScreen == "" || calcScreen[calcScreen.length - 1] === ".") { 
-        console.log("NUM WITHIN: " + num)
         return; // prevents operator entry if no prev num or if "."
       }
-      console.log("WHATTT")
       calcScreen = calcScreen.slice(0, calcScreen.length - 1) + val;
     } else if (val != "=") {
       calcScreen += val;
     }
   }
-  console.log("NUM AFTER: " + num)
-  console.log("HEY " + calcScreen);
   screen.innerText = calcScreen;
 }
 
 function checkCalculate() {
   if (num && num[num.length-1] != ".") {
-    console.log("YO ITS HERE:" + num)
     nums.push(num);
     num = ""
   }
-
-  console.log("NOOOOOO: ")
-  console.log(nums);
   
   if (nums.length == 2) {
     
-    console.log("INSIDE CALCULATE")
     let num1 = nums[0];
     let num2 = nums[1];
     if (num1.includes(".") || num2.includes(".")) {
@@ -96,8 +81,6 @@ function checkCalculate() {
     }
     calculate(num1, num2);
   }
-  console.log("CHECK CALCULATE");
-  console.log(nums);
 }
 
 function calculate(first, second) {
@@ -140,8 +123,6 @@ function clearOrBackCalculation(command) {
       oper = "";
     } else {
       let numString = nums[nums.length - 1];
-      console.log(`BEFORE`);
-      console.log(nums);
       if (numString && numString.length == 1) {
         nums.pop();
       } else if (numString) {
@@ -149,11 +130,7 @@ function clearOrBackCalculation(command) {
         nums.pop();
       }
     }
-    console.log("BEFORE calc screen: " + calcScreen)
     calcScreen = calcScreen.slice(0, calcScreen.length - 1);
-    console.log("AFTER calc screen: " + calcScreen)
   }
-  console.log(`AFTER`);
-  console.log(nums);
   showOnScreen("");
 }
