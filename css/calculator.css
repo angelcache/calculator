@@ -4,7 +4,7 @@ body {
   justify-content: space-evenly;
   font-family: Arial;
   align-content: center;
-  background-color: #BD9A81;
+  background-color: var(--bg);
 }
 
 .calc-body {
@@ -14,8 +14,8 @@ body {
   align-items: center;
   height: 600px;
   width: 350px;
-  background-color: #FFF9B1;
-  border: 3px solid #894737;
+  background-color: var(--calc-body);
+  border: 3px solid var(--calc-outline);
   border-radius: 40px;
   position: relative;
   margin-top: 150px;
@@ -33,9 +33,9 @@ body {
   position: absolute;
   width: 220px;
   height: 105px;
-  background-color: #FFF9B1;
+  background-color: var(--calc-body);
   border-radius: 100px;
-  border: 3px solid #894737;
+  border: 3px solid var(--calc-outline);
   top: 31px;
 }
 
@@ -53,7 +53,7 @@ body {
   position: relative;
   width: 300px;
   height: 98px;
-  background-color: #FFF9B1;
+  background-color: var(--calc-body);
   border-radius: 20px;
 }
 
@@ -63,7 +63,7 @@ body {
   width: 22px;
   height: 30px;
   border-radius: 50%;
-  background-color:#894737;
+  background-color:var(--calc-outline);
   bottom: -50px;
 }
 
@@ -81,7 +81,7 @@ body {
   width: 60px;
   height: 30px;
   border-radius: 50%;
-  background-color:#F2C2C3;
+  background-color: var(--calc-blush);
   bottom: -90px;
 }
 
@@ -104,7 +104,7 @@ body {
   position: absolute;
   width: 300px;
   height: 100px;
-  background-color: #894737;
+  background-color: var(--calc-outline);
   top:-70px;
   border-radius: 100px;
 }
@@ -113,7 +113,7 @@ body {
   position: absolute;
   width: 40px;
   height: 50px;
-  background-color: #894737;
+  background-color: var(--calc-outline);
   top:-85px;
   border-radius: 100px;
 }
@@ -129,10 +129,10 @@ body {
   margin-top: 100px;
   height: 100px;
   width: 250px;
-  border: 3px solid #894737;
+  border: 3px solid var(--calc-outline);
   border-radius: 4px;
-  background-color: white;
-  color: #894737;
+  background-color: var(--white);
+  color: var(--calc-outline);
   padding: 0 10px;
   font-size: 24px;
   align-items: center;
@@ -164,7 +164,7 @@ body {
   border-radius: 40px;
   box-shadow: -3px 3px 2px rgba(0, 0, 0, 0.10);
   font-size: 20px;
-  color: #894737;
+  color: var(--calc-outline);
   padding: 14px 20px;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
@@ -182,11 +182,11 @@ body {
 }
 
 .oper-button {
-  background-color: #F2C2C3;
+  background-color: var(--calc-blush);
 }
 
 .equal-button {
-  background-color: #ADD7ED;
+  background-color: var(--calc-command);
 }
 
 .flex-command-div {
@@ -199,10 +199,14 @@ body {
 .command-button {
   border: none;
   border-radius: 10px;
-  background-color: #ADD7ED;
+  background-color: var(--calc-command);
   padding: 10px 20px;
   color: #894737;
   font-size: 20px;
   font-weight: 540;
   cursor: pointer;
+}
+
+.mini-grade-calc-body {
+
 }

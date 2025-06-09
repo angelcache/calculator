@@ -11,11 +11,11 @@ let oper = "";
 const maxLimit = 15;
 
 function showOnScreen(val) {
-  let screen = document.querySelector(".js-calc-screen");
-
+  let screenBody = document.querySelector(".js-calc-screen");
+  
   // For Clear and Back Cases
   if (val == "") {
-    screen.innerText = calcScreen;
+    screenBody.innerText = calcScreen;
     return;
   }
   doneCalcScreen.innerText = "";
@@ -37,7 +37,7 @@ function showOnScreen(val) {
       calcScreen += val;
     }
   }
-  screen.innerText = calcScreen;
+  screenBody.innerText = calcScreen;
 }
 
 function checkCalculate() {
@@ -91,7 +91,7 @@ function clearOrBackCalculation(command) {
   if (command === "Clear") {
     calcScreen = "";
     nums = [];
-
+    doneCalcScreen.innerText = "";
   } else if (command === "Back") {
     lastVal = calcScreen[calcScreen.length - 1];
 
