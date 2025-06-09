@@ -1,10 +1,12 @@
 /* Outer Calculator Design */
 body {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   font-family: Arial;
   align-content: center;
-  background-color: var(--bg);
+  background: url("../img/checkerboard4.png");
+  gap: 8vw;
+  flex-wrap: wrap;
 }
 
 .calc-body {
@@ -14,12 +16,13 @@ body {
   align-items: center;
   height: 600px;
   width: 350px;
-  background-color: var(--calc-body);
+  background-color: var(--body);
   border: 3px solid var(--calc-outline);
   border-radius: 40px;
   position: relative;
   margin-top: 150px;
   padding: 0 10px 40px 10px;
+  margin-left: 8vw;
 }
 
 .calc-top {
@@ -33,7 +36,7 @@ body {
   position: absolute;
   width: 220px;
   height: 105px;
-  background-color: var(--calc-body);
+  background-color: var(--body);
   border-radius: 100px;
   border: 3px solid var(--calc-outline);
   top: 31px;
@@ -53,7 +56,7 @@ body {
   position: relative;
   width: 300px;
   height: 98px;
-  background-color: var(--calc-body);
+  background-color: var(--body);
   border-radius: 20px;
 }
 
@@ -201,12 +204,94 @@ body {
   border-radius: 10px;
   background-color: var(--calc-command);
   padding: 10px 20px;
-  color: #894737;
+  color: var(--calc-outline);
   font-size: 20px;
   font-weight: 540;
   cursor: pointer;
 }
 
-.mini-grade-calc-body {
+.extra-features {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 5vw;
+}
 
+.sticky-tab {
+  position: absolute;
+  background-color: var(--accent-tab);
+  width: 200px;
+  height: 45px;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sticky-note {
+  position: relative;
+  background-color: var(--body);
+  width: 450px;
+  height: 330px;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
+.quotes {
+  position: relative;
+  color: var(--calc-outline);
+  font-family: "Architects Daughter", Arial;
+  font-size: 2rem;
+  padding: 40px 80px;
+}
+
+.quotes::before {
+  content: "When you know better, you do better.";
+  animation: words 20s infinite;
+}
+
+.quotes::after{
+  content: "";
+  color: var(--calc-outline);
+  width: calc(100% + 8px);
+  height: 2rem;
+  background-color: var(--body);
+  border-left: 2px solid var(--calc-outline);
+
+  animation: cursor .8s infinite;
+}
+
+@keyframes cursor {
+  50% {border-color: transparent}
+}
+
+@keyframes words {
+  0%, 20% {
+    content: "When you know better, you do better."
+  }
+  21%, 40% {
+    content: "Believe you can and you're halfway there."
+  }
+  41%, 60% {
+    content: "Shoot for the stars and land on the moon!"
+  }
+  61%, 80% {
+    content: "Start before you're ready."
+  }
+  81%, 100% {
+    content: "Done is better than perfect."
+  }
+}
+
+.muffin {
+  height: 260px;
+  width: auto;
+  margin-top: 5vh;
+}
+
+.github-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
 }

@@ -28,7 +28,6 @@ commandButtons.forEach(button => {
 
 // Event Listeners for Keys
 document.addEventListener('keydown', (e) => {
-  console.log("WHAT")
   if (!isNaN(parseInt(e.key))) {
     if (num.length <= maxLimit) {
       showOnScreen(e.key);

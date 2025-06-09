@@ -1,8 +1,9 @@
 :root {
   --bg: #ebf6ff;
-  --calc-body: #FFF9B1;
+  --body: #FFF9B1;
   --calc-outline: #894737;
   --calc-blush: #F2C2C3;
   --white: #FAF9F6;
   --calc-command: #ADD7ED;
+  --accent-tab: #ADD7ED;
 }
