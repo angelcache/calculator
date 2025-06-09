@@ -2,6 +2,7 @@ const numButtons = document.querySelectorAll(".num-button");
 const operButtons = document.querySelectorAll(".oper-button");
 const equalButton = document.querySelector(".equal-button");
 const commandButtons = document.querySelectorAll(".command-button");
+const doneCalcScreen = document.querySelector(".js-calc-done-screen");
 
 let nums = [];
 let num = "";
@@ -17,6 +18,7 @@ function showOnScreen(val) {
     screen.innerText = calcScreen;
     return;
   }
+  doneCalcScreen.innerText = "";
 
   // For Calculation Cases
   if (!isNaN(parseInt(val)) || val === ".") {
@@ -39,7 +41,6 @@ function showOnScreen(val) {
 }
 
 function checkCalculate() {
-
   if (num && num[num.length-1] != ".") {
     nums.push(num);
     num = ""
@@ -61,8 +62,6 @@ function checkCalculate() {
 }
 
 function calculate(first, second) {
-  const doneCalcScreen = document.querySelector(".js-calc-done-screen");
-
   if (oper == "+") {
     num = first + second;
     calculation = `${first} + ${second}  = ${num}`;
@@ -78,9 +77,9 @@ function calculate(first, second) {
   }
 
   doneCalcScreen.innerText = calculation;
-  nums = [String(num)];
+  nums = [];
   calcScreen = String(num);
-  num = "";
+  num = String(num);
 }
 
 function clearOrBackCalculation(command) {
