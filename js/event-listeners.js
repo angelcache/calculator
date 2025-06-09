@@ -28,6 +28,10 @@ commandButtons.forEach(button => {
 
 // Event Listeners for Keys
 document.addEventListener('keydown', (e) => {
+
+  // If currently typing on grade calculator input, does not type on main calculator
+  if (document.activeElement.classList.contains("calc2-input")) return; 
+
   if (!isNaN(parseInt(e.key))) {
     if (num.length <= maxLimit) {
       showOnScreen(e.key);
