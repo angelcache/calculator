@@ -247,7 +247,7 @@ body {
 
 .quotes::before {
   content: "When you know better, you do better.";
-  animation: words 20s infinite;
+  animation: words 30s ease infinite;
 }
 
 .quotes::after{
@@ -256,13 +256,6 @@ body {
   width: calc(100% + 8px);
   height: 2rem;
   background-color: var(--body);
-  border-left: 2px solid var(--calc-outline);
-
-  animation: cursor .8s infinite;
-}
-
-@keyframes cursor {
-  50% {border-color: transparent}
 }
 
 @keyframes words {
@@ -286,7 +279,7 @@ body {
 .muffin {
   height: 260px;
   width: auto;
-  margin-top: 5vh;
+  margin-top: 15px;
 }
 
 .github-icon {
@@ -295,3 +288,56 @@ body {
   bottom: 0;
   padding: 20px;
 }
+
+.mini-grade-calc-body {
+  position: relative;
+  width: 455px;
+  height: 260px;
+}
+
+.final-grade-text {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  position: absolute;
+  bottom: 33px;
+  left: 95px;
+}
+
+.grade,
+.inputs,
+.percentage {
+  display: flex;
+  flex-direction: column;
+  text-wrap: none;
+}
+
+.grade,
+.percentage {
+  font-size: 15px;
+  font-family: "Jersey 20", Arial;
+  color: var(--calc-outline);
+  gap: 10px;
+}
+
+.inputs {
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
+.inputs input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--calc-outline);
+  width: 130px;
+  outline: none;
+  text-align: center;
+}
+
+.grade p,
+.percentage p {
+  margin: 0;
+}
+
+
