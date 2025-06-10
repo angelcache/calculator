@@ -4,8 +4,10 @@
     <title>
       Calculator Project
     </title>
-    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/alert.css">
     <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/features.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Jersey+20&display=swap" rel="stylesheet">
@@ -130,28 +132,38 @@
 
       <div class="mini-grade-calc-body">
         <img class="muffin" src="img/muffin.svg" alt="Muffin Final Grade Calculator">
-        <div class="final-grade-text">
-          <div class="grade">
-            <p>Current Grade:</p>
-            <p>Want (at least) a:</p>
-            <p>Final is worth:</p>
+        <div class="final-grade-submit">
+          <div class="final-grade-text">
+            <div class="grade">
+              <p>Current Grade:</p>
+              <p>Want (at least) a:</p>
+              <p>Final is worth:</p>
+            </div>
+            <div class="inputs">
+              <input class="calc2-input current-grade" maxlength="3">
+              <input class="calc2-input goal-grade" maxlength="3">
+              <input class="calc2-input final-weight" maxlength="3">
+            </div>
+            <div class="percentage">
+              <p>%</p>
+              <p>%</p>
+              <p>%</p>
+            </div>
           </div>
-          <div class="inputs">
-            <input class="calc2-input" maxlength="3">
-            <input class="calc2-input" maxlength="3">
-            <input class="calc2-input" maxlength="3">
-          </div>
-          <div class="percentage">
-            <p>%</p>
-            <p>%</p>
-            <p>%</p>
-          </div>
+          <button class="submit-button">calculate</button>
         </div>
       </div>
     </section>
 
+    <div class="js-overlay"></div>
+    <div class="js-alert">
+      <p class="alert-text"></p>
+      <button class="js-alert-button transparent"></button>
+    </div>
+
     <script src="js/calculator.js"></script>
     <script src="js/event-listeners.js"></script>
+    <script src="js/grade-calculator.js"></script>
   </body>
 
 </html>
