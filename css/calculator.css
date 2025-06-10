@@ -4,7 +4,7 @@ body {
   justify-content: center;
   font-family: Arial;
   align-content: center;
-  background: url("../img/checkerboard4.png");
+  background: url("../img/bg.png");
   gap: 8vw;
   flex-wrap: wrap;
 }
