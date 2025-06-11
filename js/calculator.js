@@ -72,6 +72,12 @@ function calculate(first, second) {
     num = first * second;
     calculation = `${first} * ${second}  = ${num}`;
   } else if (oper == "/") {
+    console.log(second)
+    if (second === 0) {
+      doneCalcScreen.innerText = "Can't divide by 0!";
+      calcScreen = "";
+      return;
+    }
     num = first / second;
     calculation = `${first} / ${second}  = ${num}`;
   }
