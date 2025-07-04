@@ -22,3 +22,7 @@ A calculator built with HTML, CSS, and JavaScript, featuring a custom alert and 
 - Handling event listeners and user inputs effectively  
 - Applying JavaScript logic to validate input and calculate results
 
+---
+  ## 🖼️ Preview
+
+  ![Screenshot](./img/calculator.png)
