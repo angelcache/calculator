@@ -10,6 +10,8 @@ A calculator built with HTML, CSS, and JavaScript, featuring a custom alert and 
 - Real-time DOM updates  
 - Basic calculator functions  
 - Responsive design
+- Grade Calculator
+- Sticky note with motivational quotes
 
 ---
 
@@ -19,3 +21,7 @@ A calculator built with HTML, CSS, and JavaScript, featuring a custom alert and 
 - Using CSS positioning to create centered, custom alert boxes  
 - Handling event listeners and user inputs effectively  
 - Applying JavaScript logic to validate input and calculate results
+
+  ## 🖼️ Preview
+
+  ![Screenshot](./img/calculator.png)
